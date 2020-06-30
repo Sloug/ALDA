@@ -1,0 +1,11 @@
+/.idea/
+**/.idea/
+
+/__MACOSX/
+**/__MACOSX/
+
+/target/
+**/target/
+
+/dictionary_files/
+**/dictionary_files/
