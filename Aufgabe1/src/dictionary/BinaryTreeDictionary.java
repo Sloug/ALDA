@@ -193,19 +193,6 @@ public class BinaryTreeDictionary<K extends Comparable<? super K>, V> implements
         return p;
     }
 
-    private boolean hasNextR(Node<K, V> p) {
-        if (p.right != null) {
-            return true;
-        } else {
-            if (p.parent == null)
-                return false;
-            else
-                return hasNextR(p.parent);
-        }
-
-    }
-
-
     private Node<K,V> leftMostDescendant(Node<K,V> p) {
         assert p != null;
         while (p.left != null)
