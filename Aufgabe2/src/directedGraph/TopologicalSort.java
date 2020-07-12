@@ -70,5 +70,24 @@ public class TopologicalSort<V> {
 		if (ts.topologicalSortedList() != null) {
 			System.out.println(ts.topologicalSortedList()); // [1, 2, 3, 4, 5, 6, 7]
 		}
+
+		System.out.println();
+		DirectedGraph<String> g2 = new AdjacencyListDirectedGraph<>();
+		g2.addEdge("Unterhose","Hose");
+		g2.addEdge("Unterhemd","Hemd");
+		g2.addEdge("Socken","Schuhe");
+		g2.addEdge("Hose","Schuhe");
+		g2.addEdge("Hose","Gürtel");
+		g2.addEdge("Hemd","Pulli");
+		g2.addEdge("Gürtel","Mantel");
+		g2.addEdge("Pulli","Mantel");
+		g2.addEdge("Mantel","Schal");
+		g2.addEdge("Schal","Handschuhe");
+		g2.addEdge("Mütze","Handschuhe");
+		g2.addEdge("Schuhe","Handschuhe");
+//		g2.addEdge("Schal", "Hose"); //Zyklisch
+		System.out.println(g2);
+		TopologicalSort<String> ts2 = new TopologicalSort<>(g2);
+		System.out.println(ts2.topologicalSortedList());
 	}
 }
