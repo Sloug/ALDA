@@ -104,7 +104,7 @@ public class BinaryTreeDictionary<K extends Comparable<? super K>, V> implements
             else
                 p = rotateLeftRight(p);
         } else if (getBalance(p) == +2) {
-            if (getBalance(p.left) >= 0)
+            if (getBalance(p.right) >= 0)
                 p = rotateLeft(p);
             else
                 p = rotateRightLeft(p);
@@ -214,6 +214,8 @@ public class BinaryTreeDictionary<K extends Comparable<? super K>, V> implements
             root.parent = null;
         if (oldValue == null)
             size++;
+        if (root != null)
+            root.parent = null;
         return oldValue;
     }
 
