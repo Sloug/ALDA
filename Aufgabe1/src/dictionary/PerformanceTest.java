@@ -8,6 +8,9 @@ import java.util.Scanner;
 
 
 public class PerformanceTest {
+    private static double timeFromNanosToMillis(long nanoTime) {
+        return (double) nanoTime / 1000000.0;
+    }
     private static long search(TUI tui, List<String> searchList) {
         long t0 = System.nanoTime();
         for (String word : searchList) {
@@ -49,11 +52,11 @@ public class PerformanceTest {
         t0 = System.nanoTime();
         tui.read(param);
         t1 = System.nanoTime();
-        System.out.println("Zeit zum aufbauen eines SortedArrayDictionary mit 8000 Eintraegen: " + (t1 - t0));
+        System.out.println("Zeit zum aufbauen eines SortedArrayDictionary mit 8000 Eintraegen: " + timeFromNanosToMillis(t1 - t0) + "ms");
 
-        System.out.println("Zeit fuer die Erfolgreiche suche im SortedArrayDictionary mit 8000 Eintraegen: " + search(tui, successfulSearch8000));
+        System.out.println("Zeit fuer die Erfolgreiche suche im SortedArrayDictionary mit 8000 Eintraegen: " + timeFromNanosToMillis(search(tui, successfulSearch8000)) + "ms");
 
-        System.out.println("Zeit fuer die nicht Erfolgreiche suche im SortedArrayDictionary mit 8000 Eintraegen: " + search(tui, notSuccessfulSearch8000));
+        System.out.println("Zeit fuer die nicht Erfolgreiche suche im SortedArrayDictionary mit 8000 Eintraegen: " + timeFromNanosToMillis(search(tui, notSuccessfulSearch8000)) + "ms");
 
 
         tui = new TUI();
@@ -62,11 +65,11 @@ public class PerformanceTest {
         t0 = System.nanoTime();
         tui.read(param);
         t1 = System.nanoTime();
-        System.out.println("Zeit zum aufbauen eines SortedArrayDictionary mit 15896 Eintraegen: " + (t1 - t0));
+        System.out.println("Zeit zum aufbauen eines SortedArrayDictionary mit 15896 Eintraegen: " + timeFromNanosToMillis(t1 - t0) + "ms");
 
-        System.out.println("Zeit fuer die Erfolgreiche suche im SortedArrayDictionary mit 15896 Eintraegen: " + search(tui, successfulSearch15896));
+        System.out.println("Zeit fuer die Erfolgreiche suche im SortedArrayDictionary mit 15896 Eintraegen: " + timeFromNanosToMillis(search(tui, successfulSearch15896)) + "ms");
 
-        System.out.println("Zeit fuer die nicht Erfolgreiche suche im SortedArrayDictionary mit 15896 Eintraegen: " + search(tui, notSuccessfulSearch15896));
+        System.out.println("Zeit fuer die nicht Erfolgreiche suche im SortedArrayDictionary mit 15896 Eintraegen: " + timeFromNanosToMillis(search(tui, notSuccessfulSearch15896)) + "ms");
 
 
         tui = new TUI();
@@ -77,11 +80,11 @@ public class PerformanceTest {
         t0 = System.nanoTime();
         tui.read(param);
         t1 = System.nanoTime();
-        System.out.println("Zeit zum aufbauen eines HashDictionary mit 8000 Eintraegen: " + (t1 - t0));
+        System.out.println("Zeit zum aufbauen eines HashDictionary mit 8000 Eintraegen: " + timeFromNanosToMillis(t1 - t0) + "ms");
 
-        System.out.println("Zeit fuer die Erfolgreiche suche im HashDictionary mit 8000 Eintraegen: " + search(tui, successfulSearch8000));
+        System.out.println("Zeit fuer die Erfolgreiche suche im HashDictionary mit 8000 Eintraegen: " + timeFromNanosToMillis(search(tui, successfulSearch8000)) + "ms");
 
-        System.out.println("Zeit fuer die nicht Erfolgreiche suche im HashDictionary mit 8000 Eintraegen: " + search(tui, notSuccessfulSearch8000));
+        System.out.println("Zeit fuer die nicht Erfolgreiche suche im HashDictionary mit 8000 Eintraegen: " + timeFromNanosToMillis(search(tui, notSuccessfulSearch8000)) + "ms");
 
 
         tui = new TUI();
@@ -91,11 +94,11 @@ public class PerformanceTest {
         t0 = System.nanoTime();
         tui.read(param);
         t1 = System.nanoTime();
-        System.out.println("Zeit zum aufbauen eines HashDictionary mit 15896 Eintraegen: " + (t1 - t0));
+        System.out.println("Zeit zum aufbauen eines HashDictionary mit 15896 Eintraegen: " + timeFromNanosToMillis(t1 - t0) + "ms");
 
-        System.out.println("Zeit fuer die Erfolgreiche suche im HashDictionary mit 15896 Eintraegen: " + search(tui, successfulSearch15896));
+        System.out.println("Zeit fuer die Erfolgreiche suche im HashDictionary mit 15896 Eintraegen: " + timeFromNanosToMillis(search(tui, successfulSearch15896)) + "ms");
 
-        System.out.println("Zeit fuer die nicht Erfolgreiche suche im HashDictionary mit 15896 Eintraegen: " + search(tui, notSuccessfulSearch15896));
+        System.out.println("Zeit fuer die nicht Erfolgreiche suche im HashDictionary mit 15896 Eintraegen: " + timeFromNanosToMillis(search(tui, notSuccessfulSearch15896)) + "ms");
 
 
         tui = new TUI();
@@ -106,11 +109,11 @@ public class PerformanceTest {
         t0 = System.nanoTime();
         tui.read(param);
         t1 = System.nanoTime();
-        System.out.println("Zeit zum aufbauen eines BinarySearchTreeDictionary mit 8000 Eintraegen: " + (t1 - t0));
+        System.out.println("Zeit zum aufbauen eines BinarySearchTreeDictionary mit 8000 Eintraegen: " + timeFromNanosToMillis(t1 - t0) + "ms");
 
-        System.out.println("Zeit fuer die Erfolgreiche suche im BinarySearchTreeDictionary mit 8000 Eintraegen: " + search(tui, successfulSearch8000));
+        System.out.println("Zeit fuer die Erfolgreiche suche im BinarySearchTreeDictionary mit 8000 Eintraegen: " + timeFromNanosToMillis(search(tui, successfulSearch8000)) + "ms");
 
-        System.out.println("Zeit fuer die nicht Erfolgreiche suche im BinarySearchTreeDictionary mit 8000 Eintraegen: " + search(tui, notSuccessfulSearch8000));
+        System.out.println("Zeit fuer die nicht Erfolgreiche suche im BinarySearchTreeDictionary mit 8000 Eintraegen: " + timeFromNanosToMillis(search(tui, notSuccessfulSearch8000)) + "ms");
 
         tui = new TUI();
         tui.create('b');
@@ -119,10 +122,10 @@ public class PerformanceTest {
         t0 = System.nanoTime();
         tui.read(param);
         t1 = System.nanoTime();
-        System.out.println("Zeit zum aufbauen eines BinarySearchTreeDictionary mit 15896 Eintraegen: " + (t1 - t0));
+        System.out.println("Zeit zum aufbauen eines BinarySearchTreeDictionary mit 15896 Eintraegen: " + timeFromNanosToMillis(t1 - t0) + "ms");
 
-        System.out.println("Zeit fuer die Erfolgreiche suche im BinarySearchTreeDictionary mit 15896 Eintraegen: " + search(tui, successfulSearch15896));
+        System.out.println("Zeit fuer die Erfolgreiche suche im BinarySearchTreeDictionary mit 15896 Eintraegen: " + timeFromNanosToMillis(search(tui, successfulSearch15896)) + "ms");
 
-        System.out.println("Zeit fuer die nicht Erfolgreiche suche im BinarySearchTreeDictionary mit 15896 Eintraegen: " + search(tui, notSuccessfulSearch15896));
+        System.out.println("Zeit fuer die nicht Erfolgreiche suche im BinarySearchTreeDictionary mit 15896 Eintraegen: " + timeFromNanosToMillis(search(tui, notSuccessfulSearch15896)) + "ms");
     }
 }
